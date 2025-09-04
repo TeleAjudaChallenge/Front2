@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
+import banner1 from "/src/assets/img/banner1.png";
+import banner3 from "/src/assets/img/banner3.png";
+import imgContato from "/src/assets/img/Contato.png";
 
 export default function Home(){
     
@@ -10,7 +13,7 @@ export default function Home(){
         <section>
             <h1>Bem Vindo(a) ao TeleAjuda IMREA</h1>
             <Link to={"/contato"}>Entre em Contato</Link>
-            {/*<img src="./assets/img/Sem nome (1200 x 500 mm) (1).png" alt="Imagem de médico sorrindo"></img>*/}
+            <img src={banner1} alt="Imagem de médico sorrindo"></img>
         </section>
 
         <section>
@@ -20,7 +23,7 @@ export default function Home(){
                 <button onClick={() => navigate("/chamados")}>Clique aqui</button>
             </div>
             <div>
-                {/* <img src="./assets/img/Imagem Ajuda 1.png" alt="Imagem de ajuda"> */}
+                <img src={banner3} alt="Imagem de ajuda"></img>
             </div>
         </section>
 
@@ -31,7 +34,7 @@ export default function Home(){
                 <button onClick={() => navigate("/sobre")}>Clique aqui</button>
             </div>
             <div>
-                {/* <img src="./assets/img/Contato.png" alt="Imagem de contato"> */}
+                <img src={imgContato} alt="Imagem de contato"></img>
             </div>
         </section>
 

@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import CardFilial from "../../components/Cards/cardsFilial"
+import { listaFilial } from "../../data/listaFilial"
+import type { TipoFilial } from "../../types/tipoFilial";
+
 export default function Contato(){
+    const [filial, setFilial] = useState<TipoFilial[]>([]);
+    const [filialSelecionada, setFilialSelecionada] = useState<number | null>(null);
+
+    useEffect(() => {
+        setFilial(listaFilial);
+        }, []);
+
+    
     return(
         <main>
             <h1>CONTATO</h1>
@@ -17,20 +30,19 @@ export default function Contato(){
         <section>
             <div>
             <h2>Nossas Unidades</h2>
-                <select id="unidade-select" name="tipo" required>
-                  <option value="vila-mariana">Vila Mariana</option>
-                  <option value="umarizal">Umarizal</option>
-                  <option value="lapa">Lapa</option>
-                  <option value="clinicas">Clínicas</option>
-                  <option value="morumbi">Morumbi</option>
+                <select id="unidade-select" name="tipo" required onChange={(e) => setFilialSelecionada(Number(e.target.value))}
+>                   <option value="">Selecione uma unidade</option>
+                    <option value="1">Vila Mariana</option>
+                    <option value="2">Umarizal</option>
+                    <option value="3">Lapa</option>
+                    <option value="4">Clínicas</option>
+                    <option value="5">Morumbi</option>
                 </select>
+
             </div>
-            <div>
-            <h3>Endereço</h3>
-            <p>Rua Domingo de Soto, 100 – Vila Mariana – São Paulo – SP CEP 04116-040</p>
-            <h3>Horários de Atendimento</h3>
-            <p>Segunda a sexta-feira, das 07 às 19h</p>
-        </div>
+            <div style={{display:"flex",flexWrap:"wrap",width:"100vw",height:"100vh", flexDirection:"row"}}>
+                {filialSelecionada && filial.filter((f) => f.id === filialSelecionada).map((f) => <CardFilial key={f.id} filial={f} />)}
+            </div>
         </section>
         </main>
     )

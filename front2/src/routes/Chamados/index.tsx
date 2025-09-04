@@ -2,8 +2,8 @@ export default function Chamados(){
     return(
         <main>
             <h1>Abra um Ticket</h1>
-        <section>
-            {/* <form id="formularioTicket" action="#" method="post">
+        {/* <section class="formulario">
+            <form id="formularioTicket" action="#" method="post">
                 <label for="nome">Nome</label><br>
                 <input type="text" id="nome" name="nome" required><br>
                   
@@ -28,8 +28,8 @@ export default function Chamados(){
                 <textarea id="descricao" name="descricao" rows="5" cols="40" required></textarea><br>
                 
                 <button id="enviarFormulario" type="submit">Enviar</button>
-            </form> */}
-        </section>
+            </form>
+        </section> */}
         </main>
     )
 }

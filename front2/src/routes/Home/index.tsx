@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom"
+
 export default function Home(){
     
     return(
         <main>
         <section>
             <h1>Bem Vindo(a) ao TeleAjuda IMREA</h1>
-            <a href="./assets/contato.html">Entre em Contato</a>
+            <Link to={"/contato"}>Entre em Contato</Link>
             {/*<img src="./assets/img/Sem nome (1200 x 500 mm) (1).png" alt="Imagem de médico sorrindo"></img>*/}
         </section>
 
@@ -40,7 +42,7 @@ export default function Home(){
             <div>
                 <h2>Quem somos?</h2>
                 <p>Descubra quem somos, o que fazemos </p><p>e como podemos ajudar na sua recuperação.</p>
-                <button id="botao-quem-somos">Clique aqui</button>
+                <button>Clique aqui</button>
             </div>
             <div>
                 {/* <img src="./assets/img/Contato.png" alt="Imagem de contato"> */}
